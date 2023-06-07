@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from 'react';
-import authApi from '../api/auth.api';
+import amarilisApi from '../api/amarilis.api';
 import { getToken, removeToken } from '../utils/token.utils';
 
 const AuthContext = createContext();
@@ -14,7 +14,7 @@ const AuthProviderWrapper = ({children}) => {
     setIsLoading(true);
     try {
         if (storedToken) {
-            const response = await authApi.verify();
+            const response = await amarilisApi.verify();
             setIsLoggedIn(true);
             setUser(response);
         } else {

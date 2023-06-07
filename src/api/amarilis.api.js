@@ -8,7 +8,7 @@ class AmarilisApi {
     }
 }
 
-signup = async ({username, email, password}) => {
+const signup = async ({username, email, password}) => {
     try {
       const { data } = await this.api.post('/auth/signup', {username, email, password});
       return data;
@@ -17,7 +17,7 @@ signup = async ({username, email, password}) => {
     }
 }
 
-login = async ({username, password}) => {
+const login = async ({username, password}) => {
     try {
       const { data } = await this.api.post('/auth/login', {username, password});
       return data;
@@ -26,7 +26,7 @@ login = async ({username, password}) => {
     }
 }
 
-verify = async (token) => {
+const verify = async (token) => {
     const { data } = await this.api.get('/auth/verify', {
       headers: {
         Authorization: `Bearer ${token}`
