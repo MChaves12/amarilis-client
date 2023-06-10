@@ -1,38 +1,45 @@
-import axios from 'axios';
+import axios from "axios";
 
 class AmarilisApi {
-    constructor(){
-        this.api = axios.create({
-            baseURL: process.env.REACT_APP_API_URL || 'http://localhost:5000'
-        });
-    }
-}
+  constructor() {
+    this.api = axios.create({
+      baseURL: process.env.REACT_APP_API_URL || "http://localhost:5000",
+    });
+  }
 
-const signup = async ({username, email, password}) => {
+  signup = async ({ username, email, password }) => {
     try {
-      const { data } = await this.api.post('/auth/signup', {username, email, password});
+      const { data } = await this.api.post("/auth/signup", {
+        username,
+        email,
+        password,
+      });
       return data;
     } catch (error) {
       throw error;
     }
-}
+  };
 
-const login = async ({username, password}) => {
+  login = async ({ username, password }) => {
     try {
-      const { data } = await this.api.post('/auth/login', {username, password});
+      const { data } = await this.api.post("/auth/login", {
+        username,
+        password,
+      });
       return data;
     } catch (error) {
       throw error;
     }
-}
+  };
 
-const verify = async (token) => {
-    const { data } = await this.api.get('/auth/verify', {
+  verify = async (token) => {
+    const { data } = await this.api.get("/auth/verify", {
       headers: {
-        Authorization: `Bearer ${token}`
-      }
-    })
+        Authorization: `Bearer ${token}`,
+      },
+    });
     return data;
+  };
 }
 
 const amarilisApi = new AmarilisApi();
