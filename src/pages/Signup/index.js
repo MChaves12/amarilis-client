@@ -20,7 +20,7 @@ function SignupPage () {
         e.preventDefault();
         try {
           await api.signup({username, email, password});
-          navigate('/login');
+          navigate('/admin/login');
         } catch (error) {
           setErrorMessage(error.response.data.message);
         }

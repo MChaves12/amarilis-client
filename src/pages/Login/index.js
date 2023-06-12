@@ -1,3 +1,5 @@
+import './styles.css';
+import Form from 'react-bootstrap/Form';
 import { useState, useContext } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { AuthContext } from '../../context/auth.context';
@@ -36,13 +38,13 @@ function LoginPage() {
                 <Form.Group className="mb-3" controlId="formGroupPassword">
                     <Form.Control className='form-input' type="password" placeholder="Password" onChange={handlePassword} />
                 </Form.Group>
-                <button className='submit-btn' type='submit'>Sign up</button>
+                <button className='login-btn' type='submit'>Login</button>
             </Form>
 
             {errorMessage && <p className="error-message">{errorMessage}</p>}
 
             <p>Don't have an account?</p>
-            <Link to="/signup">Signup</Link>
+            <Link className='signup-link' to="/admin/signup">Signup</Link>
         </div>
     )
 }
