@@ -22,7 +22,7 @@ function LoginPage() {
         const {authToken} = await api.login({username, password});
         storeToken(authToken);
         authenticateUser();
-        navigate('/account')
+        navigate('/admin/account')
       } catch (error) {
         setErrorMessage(error.response.data.message);
       }
