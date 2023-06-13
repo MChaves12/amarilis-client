@@ -40,6 +40,17 @@ class AmarilisApi {
     });
     return data;
   };
+
+  addProduct = async (product) => {
+    try {
+      const { data } = await this.api.post('/products', product);
+      return data;
+    } catch (error) {
+      console.log(error);
+      throw error;
+    }
+  };
+  
 }
 
 const amarilisApi = new AmarilisApi();

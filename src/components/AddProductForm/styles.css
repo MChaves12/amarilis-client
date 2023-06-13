@@ -1,0 +1,27 @@
+.add-product-form-container {
+    width: 800px;
+    height: 450px;
+    background-color: #89BDC3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+}
+
+.input {
+    width: 700px;
+    height: 50px;
+    border-radius: 5px;
+    border: none;
+    padding-left: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+}
+
+label {
+    color: black;
+    background-color: #89BDC3;
+}
+
