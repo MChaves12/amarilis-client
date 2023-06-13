@@ -10,7 +10,7 @@ function AddProductForm() {
     const [size, setSize] = useState('');
 
     const handleName = (e) => setName(e.target.value);
-    const handlePrice = (e) => setPrice(e.target.valeu);
+    const handlePrice = (e) => setPrice(e.target.value);
     const handleDescription = (e) => setDescription(e.target.value);
     const handleSize = (e) => setSize(e.target.value);
 
