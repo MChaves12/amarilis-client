@@ -1,5 +1,4 @@
 import './styles.css'
-import Form from 'react-bootstrap/Form';
 import { useState } from 'react';
 import api from '../../api/amarilis.api';
 
@@ -32,24 +31,22 @@ function AddProductForm() {
     }
 
     return(
-        <div>
-            <Form onSubmit={handleSubmit} className='add-product-form-container'>
-                 <Form.Group className="mb-3" controlId="formGroupEmail">
-                    <Form.Control className='input' type="text" placeholder="Nome" onChange={handleName} />
-                </Form.Group>
-                <Form.Group className="mb-3" controlId="formGroupEmail">
-                    <Form.Control className='input' type="text" placeholder="Preço" onChange={handlePrice} />
-                </Form.Group>
-                <Form.Group className="mb-3" controlId="formGroupEmail">
-                    <Form.Control className='description-input' type="text" placeholder="Descrição" onChange={handleDescription} />
-                </Form.Group>
-                <Form.Group className="mb-3" controlId="formGroupEmail">
-                    <Form.Control className='input' type="text" placeholder="Tamanho" onChange={handleSize} />
-                </Form.Group>
+        <form className='add-product-form-container' onSubmit={handleSubmit}>
+            <label htmlFor="name">Nome:</label>
+            <input className='input' id="name" type="text" value={name} onChange={handleName} />
+          
+            <label htmlFor="price">Preço:</label>
+            <input className='input' id="price" type="text" value={price} onChange={handlePrice} />
+          
+            <label htmlFor="description">Descrição:</label>
+            <textarea className='input' id="description" type='text' value={description} onChange={handleDescription} />
+          
+            <label htmlFor="size">Tamanho:</label>
+            <input className='input' id="size" type="text" value={size} onChange={handleSize} />
 
-                <button className='login-btn' type='submit'>Adicionar Produto</button>
-            </Form>    
-        </div>
+            <button type="submit">Adicionar produto</button>
+
+        </form>
     );
 };
 

@@ -1,11 +1,11 @@
 import './styles.css'
-import Sidebar from "../../components/Sidebar/Sidebar";
 import AddProductForm from "../../components/AddProductForm/AddProductForm";
+import AdminNavbar from '../../components/AdminNavbar/AdminNavbar';
 
 function AccountPage() {
     return(
         <div className="account-page-container">
-            <Sidebar />
+            <AdminNavbar />
             <AddProductForm />
         </div>
     );
