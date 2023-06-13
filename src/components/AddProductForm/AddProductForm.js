@@ -38,7 +38,7 @@ function AddProductForm() {
                     <Form.Control className='input' type="text" placeholder="Nome" onChange={handleName} />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formGroupEmail">
-                    <Form.Control className='input' type="number" placeholder="Preço" onChange={handlePrice} />
+                    <Form.Control className='input' type="text" placeholder="Preço" onChange={handlePrice} />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formGroupEmail">
                     <Form.Control className='description-input' type="text" placeholder="Descrição" onChange={handleDescription} />
