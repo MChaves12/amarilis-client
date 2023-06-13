@@ -29,7 +29,7 @@ function LoginPage() {
     }
 
     return (
-        <div className='container'>
+        <div className='login-container'>
             <h2>Login</h2>
             <Form onSubmit={handleSubmit} className='form-container'>
                  <Form.Group className="mb-3" controlId="formGroupEmail">
