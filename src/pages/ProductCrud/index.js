@@ -2,6 +2,7 @@ import './styles.css';
 import { useState, useEffect, useCallback } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import AdminNavbar from '../../components/AdminNavbar/AdminNavbar';
+import Card from '../../components/Card/Card';
 import api from '../../api/amarilis.api';
 
 function ProductCrudPage () {
@@ -78,10 +79,7 @@ function ProductCrudPage () {
                     </form>
                     ) :(
                         <>
-                            <h2>{product.name}</h2>
-                            <span>{product.price}</span>
-                            <p>Tamanho: {product.size}</p>
-                            <p>{product.description}</p>
+                            <Card productName={product.name} productPrice={product.price}/>
                         </>
                     )}
                     </>
