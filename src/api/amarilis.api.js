@@ -50,6 +50,16 @@ class AmarilisApi {
       throw error;
     }
   };
+
+  getAllProducts = async () => {
+    try {
+      const { data } = await this.api.get('/products');
+      return data;
+    } catch (error) {
+      console.error(error);
+      throw error;
+    }
+  };
   
 }
 
