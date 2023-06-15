@@ -8,11 +8,13 @@ import Footer from './components/Footer/Footer'
 import AccountPage from './pages/Account';
 import IsAnon from './components/IsAnon/IsAnon';
 import IsPrivate from './components/IsPrivate/IsPrivate';
+import ProductCard from "./components/Card/Card";
 
 function App() {
   return (
     <div className="App">
       <NavBar />
+      <ProductCard/>
       <Routes>
         <Route path='/' element={<div>Amarílis</div>} />
         <Route path='/admin/signup' element={<IsAnon> <SignupPage /> </IsAnon>} />

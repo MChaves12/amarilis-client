@@ -1,3 +1,5 @@
 .short-footer {
-    height: 50px; /* Defina a altura desejada */
+    height: 25px; /* Defina a altura desejada */
+    border-right: 0;
+    border-left: 0;
   }
