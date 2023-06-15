@@ -56,7 +56,7 @@ class AmarilisApi {
       const { data } = await this.api.get('/products');
       return data;
     } catch (error) {
-      console.error(error);
+      console.log(error);
       throw error;
     }
   };
@@ -66,7 +66,37 @@ class AmarilisApi {
       const { data } = await this.api.get('/category');
       return data
     } catch (error) {
-      console.error(error);
+      console.log(error);
+      throw error;
+    }
+  };
+
+  getCategoryById = async (categoryId) =>{
+    try {
+      const { data } = await this.api.get(`/category/${categoryId}`);
+      console.log(data)
+      return data;
+    } catch (error) {
+      console.log(error);
+      throw error;
+    }
+  };
+
+  removeCategory = async (categoryId) => {
+    try {
+      await this.api.delete(`/categories/${categoryId}`);
+    } catch (error) {
+      console.log(error);
+      throw error;
+    }
+  };
+
+  editCategory = async(categoryId, category) => {
+    try {
+      const { data } = await this.api.put(`/categories/${categoryId}`, category);
+      return data;
+    } catch (error) {
+      console.log(error);
       throw error;
     }
   };

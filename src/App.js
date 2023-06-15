@@ -8,6 +8,7 @@ import IsPrivate from './components/IsPrivate/IsPrivate';
 import AllProductsPage from "./pages/AllProducts";
 import CreateProductPage from "./pages/CreateProduct";
 import Categories from "./pages/Category";
+import CategoryCrud from "./pages/CategoryCrud";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path='/admin/products/create' element={ <CreateProductPage /> } />
         <Route path='/admin/products' element={<AllProductsPage />} />
         <Route path='/admin/categories' element={<Categories />} />
+        <Route path='/admin/categories/:categoryId' element={<CategoryCrud />} />
       </Routes>
     </div>
   );
