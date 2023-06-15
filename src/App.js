@@ -20,7 +20,7 @@ function App() {
         <Route path='/admin/products/create' element={ <CreateProductPage /> } />
         <Route path='/admin/products' element={<AllProductsPage />} />
         <Route path='/admin/categories' element={<Categories />} />
-        <Route path='/admin/categories/:categoryId' element={<CategoryCrud />} />
+        <Route path='/admin/categories/name/:categoryName' element={<CategoryCrud />} />
       </Routes>
     </div>
   );

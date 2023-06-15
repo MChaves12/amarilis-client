@@ -11,15 +11,15 @@ function CategoryCrud() {
 
     const handleName = (e) => setName(e.target.value);
 
-    const { categoryId } = useParams();
+    const { categoryName, categoryId } = useParams();
     const navigate = useNavigate();
 
     const fetchCategory = useCallback(async () => {
-        const categoryFromDB = await api.getCategoryById(categoryId);
+        const categoryFromDB = await api.getCategoryByName(categoryName);
         console.log(categoryFromDB);
         setCategory(categoryFromDB);
         setName(categoryFromDB.name);
-    }, [categoryId]);
+    }, [categoryName]);
 
 
     const deleteCategory = async () => {
@@ -30,7 +30,7 @@ function CategoryCrud() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         await api.editCategory({name});
-        fetchCategory();
+        navigate('/admi/categories');
     };
 
     useEffect(() =>{
@@ -46,7 +46,7 @@ function CategoryCrud() {
                                 <label htmlFor="name">Nome da Categoria:</label>
                                 <input className='input' id="name" type="text" value={name} onChange={handleName} />
                                 <div className='form-btns-container'> 
-                                    <Link className='edit-btn' to='/products'>
+                                    <Link className='edit-btn' to='/admin/categories'>
                                         <button className='edit-btn-content'>Voltar</button>
                                     </Link>
                                     <button className='submit-btn' type="submit">Confirmar</button>
