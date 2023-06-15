@@ -7,6 +7,7 @@ import IsAnon from './components/IsAnon/IsAnon';
 import IsPrivate from './components/IsPrivate/IsPrivate';
 import AllProductsPage from "./pages/AllProducts";
 import CreateProductPage from "./pages/CreateProduct";
+import Categories from "./pages/Category";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path='/admin/login' element={<IsAnon> <LoginPage /> </IsAnon>} />
         <Route path='/admin/products/create' element={ <CreateProductPage /> } />
         <Route path='/admin/products' element={<AllProductsPage />} />
+        <Route path='/admin/categories' element={<Categories />} />
       </Routes>
     </div>
   );

@@ -60,6 +60,16 @@ class AmarilisApi {
       throw error;
     }
   };
+
+  getAllCategories = async () => {
+    try {
+      const { data } = await this.api.get('/category');
+      return data
+    } catch (error) {
+      console.error(error);
+      throw error;
+    }
+  };
   
 }
 

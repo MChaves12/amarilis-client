@@ -1,26 +1,26 @@
-import './style.css';
+import './styles.css'
 import { useState, useEffect } from 'react';
 import api from '../../api/amarilis.api';
 import AdminNavbar from '../../components/AdminNavbar/AdminNavbar';
 import Card from "../../components/Card/Card";
 
-function AllProductsPage() {
-    const [products, setProducts] = useState([]);
+function Categories() {
+    const [categories, setCategories] = useState([]);
 
     useEffect(() => {
-        api.getAllProducts()
+        api.getAllCategories()
         .then((res) => {
-            setProducts(res);
+            setCategories(res);
         });
     }, []);
 
     return(
         <div>
             <AdminNavbar />
-            <div className='products-container'>
-                {products.map(product => {
+            <div className='categories-container'>
+                {categories.map(category => {
                     return(
-                        <Card className='product-card' productName={product.name} productPrice={product.price}/>
+                        <Card className='category-card' categoryName={category.name} />
                     )           
                 })}
             </div>
@@ -28,4 +28,4 @@ function AllProductsPage() {
     );
 };
 
-export default AllProductsPage;
+export default Categories;
