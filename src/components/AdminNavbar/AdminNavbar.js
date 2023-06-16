@@ -23,8 +23,8 @@ function adminNavbar() {
             navbarScroll
           >
             <NavDropdown title="Produtos" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="#action3">Todos os Produtos</NavDropdown.Item>
-              <NavDropdown.Item href="#action4">Adicionar produto</NavDropdown.Item>
+              <NavDropdown.Item href="/admin/products">Todos os Produtos</NavDropdown.Item>
+              <NavDropdown.Item href="/admin/products/create">Adicionar produto</NavDropdown.Item>
             </NavDropdown>
             <NavDropdown title="Categorias" id="navbarScrollingDropdown">
               <NavDropdown.Item href="#action3">Todos as categorias</NavDropdown.Item>

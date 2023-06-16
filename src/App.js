@@ -7,6 +7,10 @@ import AccountPage from './pages/Account';
 import IsAnon from './components/IsAnon/IsAnon';
 import IsPrivate from './components/IsPrivate/IsPrivate';
 import ProductCrudPage from "./pages/ProductCrud";
+import IsAnon from './components/IsAnon/IsAnon';
+import IsPrivate from './components/IsPrivate/IsPrivate';
+import AllProductsPage from "./pages/AllProducts";
+import CreateProductPage from "./pages/CreateProduct";
 
 function App() {
   return (
@@ -17,6 +21,8 @@ function App() {
         <Route path='/admin/login' element={<IsAnon> <LoginPage /> </IsAnon>} />
         <Route path='/admin/account' element={ <AccountPage /> } />
         <Route path='admin/products/:productId' element={ <ProductCrudPage />} />
+        <Route path='/admin/products/create' element={ <CreateProductPage /> } />
+        <Route path='/admin/products' element={<AllProductsPage />} />
       </Routes>
     </div>
   );

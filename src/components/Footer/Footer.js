@@ -6,6 +6,7 @@ import {
   MDBIcon,
   MDBBtn,
 } from "mdb-react-ui-kit";
+import './style.css';
 
 export default function Footer() {
   return (
