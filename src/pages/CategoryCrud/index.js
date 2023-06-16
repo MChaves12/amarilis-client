@@ -12,6 +12,7 @@ function CategoryCrud() {
     const handleName = (e) => setName(e.target.value);
 
     const { categoryId } = useParams();
+
     const navigate = useNavigate();
 
     const fetchCategory = useCallback(async () => {
@@ -29,8 +30,9 @@ function CategoryCrud() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        await api.editCategory({name});
+        await api.editCategory(categoryId, {name});
         fetchCategory();
+        navigate('/admin/category');
     };
 
     useEffect(() =>{

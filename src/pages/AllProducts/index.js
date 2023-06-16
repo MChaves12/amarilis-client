@@ -20,7 +20,7 @@ function AllProductsPage() {
             <div className='products-container'>
                 {products.map(product => {
                     return(
-                        <Card className='product-card' productName={product.name} productPrice={product.price}/>
+                        <Card className='product-card' productName={product.name} productPrice={product.price} productId={product._id}/>
                     )           
                 })}
             </div>

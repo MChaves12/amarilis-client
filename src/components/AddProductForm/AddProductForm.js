@@ -1,5 +1,6 @@
 import './styles.css'
 import { useState } from 'react';
+import { useNavigate } from "react-router-dom"
 import api from '../../api/amarilis.api';
 
 function AddProductForm() {
@@ -8,6 +9,8 @@ function AddProductForm() {
     const [price, setPrice] = useState(0);
     const [description, setDescription] = useState('');
     const [size, setSize] = useState('');
+
+    const navigate = useNavigate();
 
     const handleName = (e) => setName(e.target.value);
     const handlePrice = (e) => setPrice(e.target.value);
@@ -21,6 +24,7 @@ function AddProductForm() {
         }
         await api.addProduct(product);
         resetForm();
+        navigate('/admin/products');
     }
 
     const resetForm = () => {
@@ -44,7 +48,7 @@ function AddProductForm() {
             <label htmlFor="size">Tamanho:</label>
             <input className='input' id="size" type="text" value={size} onChange={handleSize} />
 
-            <button type="submit">Adicionar produto</button>
+            <button className='submit-btn' type="submit">Adicionar produto</button>
 
         </form>
     );

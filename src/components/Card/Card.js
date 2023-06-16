@@ -1,19 +1,44 @@
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
+import React from "react";
+import {
+  MDBCard,
+  MDBCardBody,
+  MDBCardTitle,
+  MDBCardText,
+  MDBCardImage,
+  MDBBtn,
+  MDBRipple,
+} from "mdb-react-ui-kit";
+import './Card.css';
 
-function ProductCard({productName, productPrice, categoryName}) {
+function ProductCard({productName, productPrice, productId, categoryId, categoryName}) {
+
   return (
-    <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src="holder.js/100px180" />
-      <Card.Body >
-        <Card.Title>{productName || categoryName}</Card.Title>
-        <Card.Text style={{color: 'black'}}>
-          {productPrice}
-        </Card.Text>
-        <Button variant="light" border='dark'>Detalhes</Button>
-      </Card.Body>
-    </Card>
+    <MDBCard>
+      <MDBRipple
+        rippleColor="light"
+        rippleTag="div"
+        className="bg-image hover-overlay"
+      >
+        <MDBCardImage className="cardImage"
+          src="https://mdbootstrap.com/img/new/standard/nature/111.webp"
+          fluid
+          alt="..."
+        />
+        <a href={`/admin/products/${productId}`}>
+          <div
+            className="mask"
+            style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}
+          ></div>
+        </a>
+      </MDBRipple>
+      <MDBCardBody>
+        <MDBCardTitle>{productName || categoryName}</MDBCardTitle>
+        <MDBCardText className="cardText">{productPrice} </MDBCardText>
+        <MDBBtn href={`/admin/products/${productId}`}>Button</MDBBtn>
+      </MDBCardBody>
+    </MDBCard>
   );
-}
-
+};  
+ 
 export default ProductCard;
+  
