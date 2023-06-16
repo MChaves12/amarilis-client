@@ -10,21 +10,8 @@ import {
 } from "mdb-react-ui-kit";
 import './Card.css';
 
-<<<<<<< HEAD
-function ProductCard({productName, productPrice}) {
-  return (
-    <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src="holder.js/100px180" />
-      <Card.Body>
-        <Card.Title>{productName}</Card.Title>
-        <Card.Text>
-          {productPrice}
-        </Card.Text>
-        <Button variant="light" border='dark'>Ver Produto</Button>
-      </Card.Body>
-    </Card>
-=======
-export default function ProductCard() {
+function ProductCard({productName, productPrice, productId}) {
+
   return (
     <MDBCard>
       <MDBRipple
@@ -37,7 +24,7 @@ export default function ProductCard() {
           fluid
           alt="..."
         />
-        <a>
+        <a href={`/admin/products/${productId}`}>
           <div
             className="mask"
             style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}
@@ -45,11 +32,13 @@ export default function ProductCard() {
         </a>
       </MDBRipple>
       <MDBCardBody>
-        <MDBCardTitle>Card title</MDBCardTitle>
-        <MDBCardText className="cardText">Preço </MDBCardText>
-        <MDBBtn href="#">Button</MDBBtn>
+        <MDBCardTitle>{productName}</MDBCardTitle>
+        <MDBCardText className="cardText">{productPrice} </MDBCardText>
+        <MDBBtn href={`/admin/products/${productId}`}>Button</MDBBtn>
       </MDBCardBody>
     </MDBCard>
->>>>>>> eccec6eb4e671305d4dd410472f6c902b51c9632
   );
-}
+};  
+ 
+export default ProductCard;
+  
