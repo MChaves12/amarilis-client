@@ -16,11 +16,11 @@ function CategoryCrud() {
     const navigate = useNavigate();
 
     const fetchCategory = useCallback(async () => {
-        const categoryFromDB = await api.getCategoryByName(categoryName);
+        const categoryFromDB = await api.getCategoryById(categoryId);
         console.log(categoryFromDB);
         setCategory(categoryFromDB);
         setName(categoryFromDB.name);
-    }, [categoryName]);
+    }, [categoryId]);
 
 
     const deleteCategory = async () => {
