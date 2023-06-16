@@ -61,6 +61,16 @@ class AmarilisApi {
     }
   };
 
+  editProduct = async (productId, product) => {
+    try {
+      const { data } = await this.api.put(`/products/${productId}`, product);
+      return data;
+    } catch (error) {
+      console.log(error);
+      throw error;
+    }
+  };
+
   removeProduct = async (productId) => {
     try {
       const { data } = await this.api.delete(`/products/${productId}`);
@@ -71,15 +81,7 @@ class AmarilisApi {
     }
   };
 
-  editProduct = async (productId, product) => {
-    try {
-      const { data } = await this.api.put(`/books/${productId}`, product);
-      return data;
-    } catch (error) {
-      console.log(error);
-      throw error;
-    }
-  };
+  
   
 }
 

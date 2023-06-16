@@ -37,7 +37,7 @@ function ProductCrudPage () {
 
     const deleteProduct = async () => {
         await api.removeProduct(productId);
-        navigate('/products');
+        navigate('/admin/products');
     };
 
     const toggleIsFormOpen = () => {
@@ -46,7 +46,7 @@ function ProductCrudPage () {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        await api.editProduct({name, price, description, size});
+        await api.editProduct(productId, {name, price, description, size});
         setIsFormOpen(false);
         fetchProduct();
     };
