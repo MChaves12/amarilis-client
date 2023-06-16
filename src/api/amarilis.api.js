@@ -51,6 +51,37 @@ class AmarilisApi {
     }
   };
 
+  getProduct = async (productId) => {
+    try {
+      const { data } = await this.api.get(`/products/${productId}`);
+      return data;
+    } catch (error) {
+      console.log(error);
+      throw error;
+    }
+  };
+
+  editProduct = async (productId, product) => {
+    try {
+      const { data } = await this.api.put(`/products/${productId}`, product);
+      return data;
+    } catch (error) {
+      console.log(error);
+      throw error;
+    }
+  };
+
+  removeProduct = async (productId) => {
+    try {
+      const { data } = await this.api.delete(`/products/${productId}`);
+      return data;
+    } catch (error) {
+      console.log(error);
+      throw error;
+    }
+  };
+
+  
   getAllProducts = async () => {
     try {
       const { data } = await this.api.get('/products');
