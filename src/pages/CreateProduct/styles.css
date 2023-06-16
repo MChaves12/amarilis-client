@@ -7,7 +7,7 @@
 }
 
 .account-page-container {
-    
+    margin: 40px;
     height: 650px;
     display: flex;
     flex-direction: column;

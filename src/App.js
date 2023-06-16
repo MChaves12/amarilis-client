@@ -8,6 +8,8 @@ import IsPrivate from './components/IsPrivate/IsPrivate';
 import ProductCrudPage from "./pages/ProductCrud";
 import AllProductsPage from "./pages/AllProducts";
 import CreateProductPage from "./pages/CreateProduct";
+import Categories from "./pages/Category";
+import CategoryCrud from "./pages/CategoryCrud";
 
 function App() {
   return (
@@ -19,6 +21,13 @@ function App() {
         <Route path='/admin/products/:productId' element={ <ProductCrudPage />} />
         <Route path='/admin/products/create' element={ <CreateProductPage /> } />
         <Route path='/admin/products' element={<AllProductsPage />} />
+<<<<<<< HEAD
+        <Route path='/admin/category' element={<Categories />} />
+        <Route path='/admin/category/:categoryId' element={<CategoryCrud />} />
+=======
+        <Route path='/admin/categories' element={<Categories />} />
+        <Route path='/admin/categories/name/:categoryName' element={<CategoryCrud />} />
+>>>>>>> 6cfee2005f1fa9aa0c4830f663d70f9f6cb0d266
       </Routes>
     </div>
   );

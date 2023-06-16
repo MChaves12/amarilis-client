@@ -10,7 +10,7 @@ import {
 } from "mdb-react-ui-kit";
 import './Card.css';
 
-function ProductCard({productName, productPrice, productId}) {
+function ProductCard({productName, productPrice, productId, categoryId, categoryName}) {
 
   return (
     <MDBCard>
@@ -32,7 +32,7 @@ function ProductCard({productName, productPrice, productId}) {
         </a>
       </MDBRipple>
       <MDBCardBody>
-        <MDBCardTitle>{productName}</MDBCardTitle>
+        <MDBCardTitle>{productName || categoryName}</MDBCardTitle>
         <MDBCardText className="cardText">{productPrice} </MDBCardText>
         <MDBBtn href={`/admin/products/${productId}`}>Button</MDBBtn>
       </MDBCardBody>

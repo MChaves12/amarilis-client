@@ -4,9 +4,11 @@ import AdminNavbar from '../../components/AdminNavbar/AdminNavbar';
 
 function CreateProductPage() {
     return(
-        <div className="account-page-container">
+        <div>
             <AdminNavbar />
-            <AddProductForm />
+            <div className="account-page-container">
+                <AddProductForm />
+            </div>
         </div>
     );
 };
