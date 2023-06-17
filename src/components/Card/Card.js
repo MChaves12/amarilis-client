@@ -34,7 +34,8 @@ function ProductCard({productName, productPrice, productId, categoryId, category
       <MDBCardBody>
         <MDBCardTitle>{productName || categoryName}</MDBCardTitle>
         <MDBCardText className="cardText">{productPrice} </MDBCardText>
-        <MDBBtn href={`/admin/${productRoute || categoryRoute}/${productId || categoryId}`}>Button</MDBBtn>
+        <MDBBtn href={`/admin/${productRoute || categoryRoute}/${productId || categoryId}`}>Editar</MDBBtn>
+        <MDBBtn href={`/admin/category/add-product/${productId}`}>Adicionar Categoria</MDBBtn>
       </MDBCardBody>
     </MDBCard>
   );

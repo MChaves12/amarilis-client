@@ -10,6 +10,7 @@ import AllProductsPage from "./pages/AllProducts";
 import CreateProductPage from "./pages/CreateProduct";
 import Categories from "./pages/Category";
 import CategoryCrud from "./pages/CategoryCrud";
+import AddProductToCategory from "./pages/AddProductToCat";
 
 function App() {
   return (
@@ -21,8 +22,9 @@ function App() {
         <Route path='/admin/products/:productId' element={ <ProductCrudPage />} />
         <Route path='/admin/products/create' element={ <CreateProductPage /> } />
         <Route path='/admin/products' element={<AllProductsPage />} />
+        <Route path='/admin/category/add-product/:productId' element={<AddProductToCategory />} />
         <Route path='/admin/category' element={<Categories />} />
-        <Route path='/admin/category/:categoryId' element={<CategoryCrud />} />
+        <Route path='/admin/category/add-product/:categoryName/:categoryId' element={<CategoryCrud />} />
       </Routes>
     </div>
   );
