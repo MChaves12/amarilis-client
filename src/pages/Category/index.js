@@ -20,7 +20,7 @@ function Categories() {
             <div className='categories-container'>
                 {categories.map(category => {
                     return(
-                        <Card className='category-card' categoryName={category.name} categoryId={category._id}/>
+                        <Card className='category-card' categoryName={category.name} categoryId={category._id} categoryRoute={'category'}/>
                     )           
                 })}
             </div>

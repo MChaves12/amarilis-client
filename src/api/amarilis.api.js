@@ -61,6 +61,16 @@ class AmarilisApi {
     }
   };
 
+  addProductToCategory = async (categoryName, productId) => {
+    try {
+      const { data } = await this.api.post(`/category/add-product/${categoryName}/${productId}`);
+      return data;
+    } catch (error) {
+      console.log(error);
+      throw error;
+    }
+  }
+
   editProduct = async (productId, product) => {
     try {
       const { data } = await this.api.put(`/products/${productId}`, product);
