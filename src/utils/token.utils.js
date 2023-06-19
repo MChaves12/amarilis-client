@@ -1,12 +1,12 @@
 export const storeToke = (token) => {
-    localStorage('authToken', token);
+    localStorage('token', token);
   };
 
   export const removeToken = () => {
-    localStorage.removeItem('authToken');
+    localStorage.removeItem('token');
   };
 
   export const getToken = () => {
-    return localStorage.getItem('authToken');
+    return localStorage.getItem('token');
   };
   

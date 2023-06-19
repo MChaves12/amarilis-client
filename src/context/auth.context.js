@@ -1,6 +1,5 @@
-import { createContext, useEffect, useState } from 'react';
+import { createContext, useEffect, useState, useCallback } from 'react';
 import amarilisApi from '../api/amarilis.api';
-import { getToken, removeToken } from '../utils/token.utils';
 
 const AuthContext = createContext();
 
@@ -9,12 +8,32 @@ const AuthProviderWrapper = ({children}) => {
   const [isLoading, setIsLoading] = useState(true);
   const [user, setUser] = useState(null);
 
-  const authenticateUser = async () => {
+  const storeToken = (token) => {
+    localStorage.setItem('token', token)
+  };
+
+  const getToken = () => {
+    return localStorage.getItem('token');
+  };
+
+  const removeToken = () => {
+    localStorage.getItem('token');
+  };
+
+  const authenticateUser = useCallback(async () => { 
     const storedToken = getToken();
     setIsLoading(true);
+
+    if(!storedToken) {
+      setIsLoading(false);
+      setIsLoggedIn(false);
+      setUser(null);
+      return;
+    }
+  
     try {
         if (storedToken) {
-            const response = await amarilisApi.verify();
+            const response = await amarilisApi.verify(storedToken);
             setIsLoggedIn(true);
             setUser(response);
         } else {
@@ -27,8 +46,8 @@ const AuthProviderWrapper = ({children}) => {
         } finally {  
             setIsLoading(false);
         }
-    }
-    
+    }, [])
+
     const logOutUser = () => {
         removeToken();
         authenticateUser();
@@ -36,10 +55,10 @@ const AuthProviderWrapper = ({children}) => {
     
     useEffect(() => {
         authenticateUser();
-    }, []);
+    }, [authenticateUser]);
 
     return ( 
-    <AuthContext.Provider value={{isLoggedIn, isLoading, user, authenticateUser, logOutUser}}>
+    <AuthContext.Provider value={{isLoggedIn, isLoading, user, storeToken, authenticateUser, logOutUser}}>
       {children}
     </AuthContext.Provider>
   )
