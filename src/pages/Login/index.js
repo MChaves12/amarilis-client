@@ -3,13 +3,15 @@ import Form from 'react-bootstrap/Form';
 import { useState, useContext } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { AuthContext } from '../../context/auth.context';
+import { storeToken } from '../../utils/token.utils';
 import api from '../../api/amarilis.api';
 
 function LoginPage() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
-    const { storeToken, authenticateUser } = useContext(AuthContext);
+    const { authenticateUser } = useContext(AuthContext);
+    
 
     const navigate = useNavigate();
 
@@ -21,10 +23,12 @@ function LoginPage() {
       try {
         const {authToken} = await api.login({username, password});
         storeToken(authToken);
+        console.log(authToken);
         authenticateUser();
+        console.log('aqui');
         navigate('/admin/products')
       } catch (error) {
-        setErrorMessage(error.response.data.message);
+       // setErrorMessage(error.response.data.message);
       }
     }
 

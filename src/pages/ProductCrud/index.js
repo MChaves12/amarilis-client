@@ -70,7 +70,7 @@ function ProductCrudPage () {
                                      <button className='form-btns'>Voltar</button>
                                 </Link>
                                 <button className='submit-form-btn' type="submit">Confirmar</button>
-                                <button className='delete-form-btn' onClick={deleteProduct}>Remover</button>  
+                                <button className='delete-form-btn' type='button' onClick={deleteProduct}>Remover</button>  
                             </div>     
                     </form>                   
                 )}                                       

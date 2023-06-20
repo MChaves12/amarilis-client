@@ -52,7 +52,7 @@ function CategoryCrud() {
                                         <button className='edit-btn-content'>Voltar</button>
                                     </Link>
                                     <button className='submit-btn' type="submit">Confirmar</button>
-                                    <button className='delete-btn' onClick={deleteCategory}>Remover</button>
+                                    <button className='delete-btn' type='button' onClick={deleteCategory}>Remover</button>
                                 </div>      
                             </form>                  
                     )}        

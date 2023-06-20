@@ -1,10 +1,20 @@
 import axios from "axios";
+import * as utils from '../utils/token.utils';
 
 class AmarilisApi {
   constructor() {
     this.api = axios.create({
       baseURL: process.env.REACT_APP_API_URL || "http://localhost:5000",
     });
+    this.api.interceptors.request.use((req) => {
+      const storedToken = utils.getToken()
+
+      if(storedToken) {
+        req.headers.Authorization = 'Bearer ' + storedToken;
+      } 
+
+      return req;
+    })
   }
 
   signup = async ({ username, email, password }) => {
@@ -32,12 +42,8 @@ class AmarilisApi {
     }
   };
 
-  verify = async (token) => {
-    const { data } = await this.api.get("/auth/verify", {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
+  verify = async () => {
+    const { data } = await this.api.get("/auth/verify"); 
     return data;
   };
 
