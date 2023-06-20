@@ -17,12 +17,14 @@ function AllProductsPage() {
     return(
         <div>
             <AdminNavbar />
-            <div className='products-container'>
-                {products.map(product => {
-                    return(
-                        <Card className='product-card' productName={product.name} productPrice={product.price} productId={product._id} productRoute={'products'}/>
-                    )           
-                })}
+            <div className='cards-container'> 
+                <div className='products-container'>
+                    {products.map(product => {
+                        return(
+                            <Card className='product-card' productName={product.name} productPrice={product.price} productId={product._id} productRoute={'products'}/>
+                        )           
+                    })}
+                </div>
             </div>
         </div>
     );

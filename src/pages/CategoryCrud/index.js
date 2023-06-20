@@ -48,7 +48,7 @@ function CategoryCrud() {
                                 <label htmlFor="name">Nome da Categoria:</label>
                                 <input className='input' id="name" type="text" value={name} onChange={handleName} />
                                 <div className='form-btns-container'> 
-                                    <Link className='edit-btn' to='/admin/categories'>
+                                    <Link className='edit-btn' to='/admin/category'>
                                         <button className='edit-btn-content'>Voltar</button>
                                     </Link>
                                     <button className='submit-btn' type="submit">Confirmar</button>

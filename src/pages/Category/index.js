@@ -2,7 +2,7 @@ import './styles.css'
 import { useState, useEffect } from 'react';
 import api from '../../api/amarilis.api';
 import AdminNavbar from '../../components/AdminNavbar/AdminNavbar';
-import Card from "../../components/Card/Card";
+import CardCategory from "../../components/CardCategory/CardCategory";
 
 function Categories() {
     const [categories, setCategories] = useState([]);
@@ -17,12 +17,14 @@ function Categories() {
     return(
         <div>
             <AdminNavbar />
-            <div className='categories-container'>
-                {categories.map(category => {
-                    return(
-                        <Card className='category-card' categoryName={category.name} categoryId={category._id} categoryRoute={'category'}/>
-                    )           
-                })}
+            <div className='cards-container'> 
+                <div className='categories-container'>
+                    {categories.map(category => {
+                        return(
+                            <CardCategory className='category-card' categoryName={category.name} categoryId={category._id} />
+                        )           
+                    })}
+                </div>
             </div>
         </div>
     );
