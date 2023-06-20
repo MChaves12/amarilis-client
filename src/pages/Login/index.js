@@ -28,7 +28,7 @@ function LoginPage() {
         console.log('aqui');
         navigate('/admin/products')
       } catch (error) {
-       // setErrorMessage(error.response.data.message);
+        setErrorMessage(error.response.data.message);
       }
     }
 

@@ -11,7 +11,7 @@ const IsAnon = ({ children }) => {
   }
 
   if (isLoggedIn) {
-    return <Navigate to="/admin/account" />;
+    return <Navigate to="/admin/products" />;
   }
 
   return children;
