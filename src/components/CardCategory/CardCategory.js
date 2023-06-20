@@ -3,17 +3,16 @@ import {
   MDBCard,
   MDBCardBody,
   MDBCardTitle,
-  MDBCardText,
   MDBCardImage,
   MDBBtn,
   MDBRipple,
 } from "mdb-react-ui-kit";
-import './Card.css';
+import './CardCategory.css';
 
-function ProductCard({productName, productPrice, productId, categoryId, categoryName, productRoute, categoryRoute}) {
+function CategoryCard({categoryId, categoryName}) {
 
   return (
-    <MDBCard className="product-card">
+    <MDBCard className="category-card">
       <MDBRipple
         rippleColor="light"
         rippleTag="div"
@@ -24,7 +23,7 @@ function ProductCard({productName, productPrice, productId, categoryId, category
           fluid
           alt="..."
         />
-        <a href={`/admin/products/${productId}`}>
+        <a href={`/admin/products/${categoryId}`}>
           <div
             className="mask"
             style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}
@@ -32,16 +31,14 @@ function ProductCard({productName, productPrice, productId, categoryId, category
         </a>
       </MDBRipple>
       <MDBCardBody>
-        <MDBCardTitle>{productName || categoryName}</MDBCardTitle>
-        <MDBCardText className="cardText">{productPrice} </MDBCardText>
+        <MDBCardTitle>{categoryName}</MDBCardTitle>
         <div className="btns-container"> 
-          <MDBBtn className='card-btn' href={`/admin/${productRoute || categoryRoute}/${productId || categoryId}`}>Editar</MDBBtn>
-          <MDBBtn className='card-btn' href={`/admin/category/add-product/${productId}`}>Adicionar Categoria</MDBBtn>
+          <MDBBtn className='card-btn' href={`/admin/category/${categoryId}`}>Editar</MDBBtn>
         </div>
       </MDBCardBody>
     </MDBCard>
   );
 };  
  
-export default ProductCard;
+export default CategoryCard;
   

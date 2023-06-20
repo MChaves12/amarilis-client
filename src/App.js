@@ -11,6 +11,7 @@ import CreateProductPage from "./pages/CreateProduct";
 import Categories from "./pages/Category";
 import CategoryCrud from "./pages/CategoryCrud";
 import AddProductToCategory from "./pages/AddProductToCat";
+import CreateCategory from "./pages/CreateCategory";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         
         <Route path='/admin/category/add-product/:productId' element={<AddProductToCategory />} />
         <Route path='/admin/category' element={<Categories />} />
+        <Route path='/admin/category/create' element={<CreateCategory />} />
         <Route path='/admin/category/:categoryId' element={<CategoryCrud />} />
         <Route path='/admin/category/add-product/:categoryName/:categoryId' element={<CategoryCrud />} />
       </Routes>

@@ -24,11 +24,11 @@ function adminNavbar() {
           >
             <NavDropdown title="Produtos" id="navbarScrollingDropdown">
               <NavDropdown.Item href="/admin/products">Todos os Produtos</NavDropdown.Item>
-              <NavDropdown.Item href="/admin/products/create">Adicionar produto</NavDropdown.Item>
+              <NavDropdown.Item href="/admin/products/create">Criar produto</NavDropdown.Item>
             </NavDropdown>
             <NavDropdown title="Categorias" id="navbarScrollingDropdown">
               <NavDropdown.Item href="/admin/category">Todos as categorias</NavDropdown.Item>
-              <NavDropdown.Item href="#action4">Adicionar categoria</NavDropdown.Item>
+              <NavDropdown.Item href="/admin/category/create">Criar categoria</NavDropdown.Item>
             </NavDropdown>
           </Nav>
           <Form className="d-flex">

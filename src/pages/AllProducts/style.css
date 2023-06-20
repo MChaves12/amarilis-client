@@ -1,8 +1,11 @@
 .products-container {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     margin-top: 30px;
+    width: 1200px;
+    height: 800px;
+    flex-wrap: wrap;
 }
 
 .product-card {
