@@ -97,6 +97,15 @@ class AmarilisApi {
     }
   };
 
+  addImages = async (formData) => {
+    try {
+      const { data } = await this.api.post('/products/image', formData);
+      return data;
+    } catch (error) {
+      throw error;
+    }
+  }
+
   addCategory = async (category) => {
     try {
       const { data } = await this.api.post('/category', category);

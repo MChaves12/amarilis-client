@@ -9,6 +9,7 @@ function AddProductForm() {
     const [price, setPrice] = useState(0);
     const [description, setDescription] = useState('');
     const [size, setSize] = useState('');
+    const [files, setFiles] = useState([]);
 
     const navigate = useNavigate();
 
@@ -22,9 +23,16 @@ function AddProductForm() {
         const product = {
             name, price, description, size
         }
+        const formData = new FormData();
+        formData.append('image', files);
+        await api.addImages(formData);
         await api.addProduct(product);
         resetForm();
         navigate('/admin/products');
+    }
+
+    const handleFiles = (e) => {
+        setFiles(e.target.files)
     }
 
     const resetForm = () => {
@@ -47,6 +55,8 @@ function AddProductForm() {
           
             <label htmlFor="size">Tamanho:</label>
             <input className='input' id="size" type="text" value={size} onChange={handleSize} />
+
+            <input type='file' onChange={handleFiles} />
 
             <button className='submit-btn' type="submit">Adicionar produto</button>
 
