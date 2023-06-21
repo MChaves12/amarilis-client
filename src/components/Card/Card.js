@@ -10,7 +10,7 @@ import {
 } from "mdb-react-ui-kit";
 import './Card.css';
 
-function ProductCard({productName, productPrice, productId, categoryId, categoryName, productRoute, categoryRoute}) {
+function ProductCard({productName, productPrice, productId, productImg, categoryId, categoryName, productRoute, categoryRoute}) {
 
   return (
     <MDBCard className="product-card">
@@ -20,7 +20,7 @@ function ProductCard({productName, productPrice, productId, categoryId, category
         className="bg-image hover-overlay"
       >
         <MDBCardImage className="cardImage"
-          src="https://mdbootstrap.com/img/new/standard/nature/111.webp"
+          src={ productImg[0] || "https://mdbootstrap.com/img/new/standard/nature/111.webp"}
           fluid
           alt="..."
         />
