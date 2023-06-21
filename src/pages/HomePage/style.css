@@ -1,4 +1,4 @@
-.carrousel{
+/*.carrousel{
     position: absolute;
     right: 0; 
     bottom: 0; 
@@ -27,9 +27,12 @@
     margin-bottom: 1rem;
     margin-left: 15%;
     list-style: none;
+}*/
+
+/*.carrousel .h3{
+    color: white;
 }
 
-.frase{
-    font-size: 70px;
-  color: rgb(0, 0, 0);
-}
+.h1{
+   text-align: center;
+}*/

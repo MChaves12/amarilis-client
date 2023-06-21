@@ -8,7 +8,7 @@ import {
   MDBBtn,
   MDBRipple,
 } from "mdb-react-ui-kit";
-import './Card.css';
+import './styles.css';
 
 function CardProduct({productName, productPrice, productId }) {
 
