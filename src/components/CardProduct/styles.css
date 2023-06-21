@@ -1,0 +1,28 @@
+.cardImage {
+    object-fit: fill;
+    width: 250px;
+    height: 200px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.product-card {
+    margin-bottom: 15px;
+}
+
+.cardText{
+    color:black
+}
+
+.btns-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-btn {
+    margin-bottom: 5px;
+}
