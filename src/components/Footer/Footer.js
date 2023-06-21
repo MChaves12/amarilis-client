@@ -45,12 +45,12 @@ export default function Footer() {
 
             <ul className="list-unstyled">
               <li>
-                <a href="nonalcooholic" className="text-black">
+                <a href="informacoes-de-envio" className="text-black">
                   Informaçoes sobre Envios
                 </a>
               </li>
               <li>
-                <a href="nonalcooholic" className="text-black">
+                <a href="politicas-de-troca-devolucao" className="text-black">
                   Política de Trocas e Devoluçoes
                 </a>
               </li>

@@ -22,20 +22,20 @@ function NavBar() {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav.Link href="#action1">Guia de tamanhos</Nav.Link>
-            <Nav.Link href="#action2">Como cuidar</Nav.Link>
+            <Nav.Link href="guia-de-tamanhos">Guia de tamanhos</Nav.Link>
+            <Nav.Link href="como-cuidar">Como cuidar</Nav.Link>
             <NavDropdown title="Nossos Produtos" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="#action3">Anéis</NavDropdown.Item>
-              <NavDropdown.Item href="#action4">
+              <NavDropdown.Item href="aneis">Anéis</NavDropdown.Item>
+              <NavDropdown.Item href="brincos">
                 Brincos
               </NavDropdown.Item>
-              <NavDropdown.Item href="#action5">
+              <NavDropdown.Item href="colares">
                 Colares
               </NavDropdown.Item>
-              <NavDropdown.Item href="#action5">
+              <NavDropdown.Item href="piercings">
                 Piercings
               </NavDropdown.Item>
-              <NavDropdown.Item href="#action5">
+              <NavDropdown.Item href="pulseiras">
                 Pulseiras
               </NavDropdown.Item>
             </NavDropdown>
