@@ -7,12 +7,13 @@ import IsAnon from './components/IsAnon/IsAnon';
 import IsPrivate from './components/IsPrivate/IsPrivate';
 import AllProductsPage from "./pages/AllProducts";
 import CreateProductPage from "./pages/CreateProduct";
+import HomePage from "./pages/HomePage";
 
 function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path='/' element={<div>Amarílis</div>} />
+        <Route path='/' element={ <HomePage />} />
         <Route path='/admin/signup' element={<IsAnon> <SignupPage /> </IsAnon>} />
         <Route path='/admin/login' element={<IsAnon> <LoginPage /> </IsAnon>} />
         <Route path='/admin/products/create' element={ <CreateProductPage /> } />
