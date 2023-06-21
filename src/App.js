@@ -22,14 +22,14 @@ function App() {
         <Route path='/admin/signup' element={<IsAnon> <SignupPage /> </IsAnon>} />
         <Route path='/admin/login' element={<IsAnon> <LoginPage /> </IsAnon>} />
         <Route path='/admin/products' element={ <IsPrivate> <AllProductsPage /> </IsPrivate>}  />
-        <Route path='/admin/products/:productId' element={ <ProductCrudPage />} />
-        <Route path='/admin/products/create' element={ <CreateProductPage /> } />
+        <Route path='/admin/products/:productId' element={<IsPrivate> <ProductCrudPage /> </IsPrivate> } />
+        <Route path='/admin/products/create' element={ <IsPrivate> <CreateProductPage /> </IsPrivate>  } />
         
-        <Route path='/admin/category/add-product/:productId' element={<AddProductToCategory />} />
-        <Route path='/admin/category' element={<Categories />} />
-        <Route path='/admin/category/create' element={<CreateCategory />} />
-        <Route path='/admin/category/:categoryId' element={<CategoryCrud />} />
-        <Route path='/admin/category/add-product/:categoryName/:categoryId' element={<CategoryCrud />} />
+        <Route path='/admin/category/add-product/:productId' element={ <IsPrivate> <AddProductToCategory />  </IsPrivate>} />
+        <Route path='/admin/category' element={<IsPrivate> <Categories /> </IsPrivate>} />
+        <Route path='/admin/category/create' element={<IsPrivate> <CreateCategory /> </IsPrivate>} />
+        <Route path='/admin/category/:categoryId' element={<IsPrivate> <CategoryCrud /> </IsPrivate>} />
+        <Route path='/admin/category/add-product/:categoryName/:categoryId' element={<IsPrivate> <CategoryCrud /> </IsPrivate>} />
       </Routes>
     </div>
   );

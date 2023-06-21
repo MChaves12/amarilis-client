@@ -3,7 +3,6 @@ import {
   MDBCard,
   MDBCardBody,
   MDBCardTitle,
-  MDBCardImage,
   MDBBtn,
   MDBRipple,
 } from "mdb-react-ui-kit";
@@ -18,17 +17,6 @@ function CategoryCard({categoryId, categoryName}) {
         rippleTag="div"
         className="bg-image hover-overlay"
       >
-        <MDBCardImage className="cardImage"
-          src="https://mdbootstrap.com/img/new/standard/nature/111.webp"
-          fluid
-          alt="..."
-        />
-        <a href={`/admin/products/${categoryId}`}>
-          <div
-            className="mask"
-            style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}
-          ></div>
-        </a>
       </MDBRipple>
       <MDBCardBody>
         <MDBCardTitle>{categoryName}</MDBCardTitle>

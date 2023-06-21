@@ -28,9 +28,9 @@ function SignupPage () {
 
     return (
         <div className='signup-container'>
-            <h2>Create You're Account</h2>
+            <h2 className='title'>Create You're Account</h2>
             <Form onSubmit={handleSubmit} className='form-container'>
-                 <Form.Group className="mb-3" controlId="formGroupEmail">
+                 <Form.Group className="mb-3" controlId="formGroupUsername">
                     <Form.Control className='form-input' type="text" placeholder="Username" onChange={handleUsername} />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formGroupEmail">
@@ -45,7 +45,7 @@ function SignupPage () {
             {errorMessage && <p className="error-message">{errorMessage}</p>}
 
             <p>Already have an account?</p>
-            <Link className='login-link' to='/login'>Login</Link>
+            <Link className='login-link' to='/admin/login'>Login</Link>
         </div>
     );
 };

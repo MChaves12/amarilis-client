@@ -15,7 +15,8 @@
 }
 
 .cardText{
-    color:black
+    color: black;
+    background-color: white;
 }
 
 .btns-container {

@@ -34,7 +34,7 @@ function LoginPage() {
 
     return (
         <div className='login-container'>
-            <h2>Login</h2>
+            <h2 className='title'>Login</h2>
             <Form onSubmit={handleSubmit} className='form-container'>
                  <Form.Group className="mb-3" controlId="formGroupEmail">
                     <Form.Control className='form-input' type="text" placeholder="Username" onChange={handleUsername} />

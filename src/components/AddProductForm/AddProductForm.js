@@ -62,7 +62,7 @@ function AddProductForm() {
             <label htmlFor="size">Tamanho:</label>
             <input className='input' id="size" type="text" value={size} onChange={handleSize} />
 
-            <input type='file' multiple onChange={handleFiles} />
+            <input className='img-btn' type='file' multiple onChange={handleFiles} />
 
             <button className='submit-btn' type="submit">Adicionar produto</button>
 

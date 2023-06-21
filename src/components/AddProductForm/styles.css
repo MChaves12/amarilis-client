@@ -1,6 +1,6 @@
 .add-product-form-container {
     width: 800px;
-    height: 450px;
+    height: 500px;
     background-color: #89BDC3;
     display: flex;
     flex-direction: column;
@@ -23,5 +23,11 @@
 label {
     color: black;
     background-color: #89BDC3;
+}
+
+.img-btn {
+    width: 250px;
+    margin-bottom: 15px;
+    
 }
 

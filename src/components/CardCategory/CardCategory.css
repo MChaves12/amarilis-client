@@ -1,17 +1,12 @@
-.cardImage {
-    object-fit: fill;
-    width: 250px;
-    height: 200px;
-    margin-bottom: 5px;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-}
 
 .category-card {
-    margin-bottom: 15px;
+    margin: 15px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 300px;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .cardText{
