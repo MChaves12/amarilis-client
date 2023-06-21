@@ -11,19 +11,20 @@ function AllProductsPage() {
         api.getAllProducts()
         .then((res) => {
             setProducts(res);
-            console.log(res);
         });
     }, []);
 
     return(
         <div>
             <AdminNavbar />
-            <div className='products-container'>
-                {products.map(product => {
-                    return(
-                        <Card className='product-card' productName={product.name} productPrice={product.price}/>
-                    )           
-                })}
+            <div className='cards-container'> 
+                <div className='products-container'>
+                    {products.map(product => {
+                        return(
+                            <Card className='product-card' productName={product.name} productPrice={product.price} productId={product._id} productImg={product.images} productRoute={'products'}/>
+                        )           
+                    })}
+                </div>
             </div>
         </div>
     );

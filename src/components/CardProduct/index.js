@@ -10,7 +10,7 @@ import {
 } from "mdb-react-ui-kit";
 import './Card.css';
 
-function ProductCard({productName, productPrice, productId, productImg, categoryId, categoryName, productRoute, categoryRoute}) {
+function CardProduct({productName, productPrice, productId }) {
 
   return (
     <MDBCard className="product-card">
@@ -20,7 +20,7 @@ function ProductCard({productName, productPrice, productId, productImg, category
         className="bg-image hover-overlay"
       >
         <MDBCardImage className="cardImage"
-          src={ productImg[0] || "https://mdbootstrap.com/img/new/standard/nature/111.webp"}
+          src="https://mdbootstrap.com/img/new/standard/nature/111.webp"
           fluid
           alt="..."
         />
@@ -32,16 +32,15 @@ function ProductCard({productName, productPrice, productId, productImg, category
         </a>
       </MDBRipple>
       <MDBCardBody>
-        <MDBCardTitle>{productName || categoryName}</MDBCardTitle>
+        <MDBCardTitle>{productName}</MDBCardTitle>
         <MDBCardText className="cardText">{productPrice} </MDBCardText>
         <div className="btns-container"> 
-          <MDBBtn className='card-btn' href={`/admin/${productRoute || categoryRoute}/${productId || categoryId}`}>Editar</MDBBtn>
-          <MDBBtn className='card-btn' href={`/admin/category/add-product/${productId}`}>Adicionar Categoria</MDBBtn>
+          <MDBBtn className='card-btn' href={`/admin/products/${productId}`}>Detalhes</MDBBtn>
         </div>
       </MDBCardBody>
     </MDBCard>
   );
 };  
  
-export default ProductCard;
+export default CardProduct;
   

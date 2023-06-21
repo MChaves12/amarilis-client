@@ -1,13 +1,16 @@
-.products-container {
+.categories-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-top: 30px;
     width: 1200px;
-    height: 800px;
     flex-wrap: wrap;
 }
 
-.product-card {
-    color: black;
+.cards-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+

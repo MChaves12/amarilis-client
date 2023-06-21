@@ -1,0 +1,23 @@
+
+.category-card {
+    margin: 15px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 300px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cardText{
+    color:black
+}
+
+.btns-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-btn {
+    margin-bottom: 5px;
+}
