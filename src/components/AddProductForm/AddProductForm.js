@@ -20,19 +20,25 @@ function AddProductForm() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const product = {
-            name, price, description, size
-        }
+       
         const formData = new FormData();
-        formData.append('image', files);
-        await api.addImages(formData);
-        await api.addProduct(product);
+        for ( let i=0; i < files.length; i++ ) {
+            formData.append('images', files[i]);
+        }
+        formData.append('name', name);
+        formData.append('price', price);
+        formData.append('description', description);
+        formData.append('size', size);
+        //await api.addImages(formData);
+        await api.addProduct(formData);
         resetForm();
         navigate('/admin/products');
     }
 
     const handleFiles = (e) => {
-        setFiles(e.target.files)
+        const [ img1, img2, img3 ] = e.target.files
+        setFiles([img1, img2, img3]);
+        console.log(files);
     }
 
     const resetForm = () => {
@@ -56,7 +62,7 @@ function AddProductForm() {
             <label htmlFor="size">Tamanho:</label>
             <input className='input' id="size" type="text" value={size} onChange={handleSize} />
 
-            <input type='file' onChange={handleFiles} />
+            <input type='file' multiple onChange={handleFiles} />
 
             <button className='submit-btn' type="submit">Adicionar produto</button>
 
