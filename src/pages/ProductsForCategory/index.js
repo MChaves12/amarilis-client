@@ -16,6 +16,8 @@ function ProductsForCategory () {
         });
     }, [categoryName]);
 
+    console.log(category);
+
     const productsFromCategory = category.products;
 
     return (
@@ -23,9 +25,9 @@ function ProductsForCategory () {
             <Navbar />
             <div className='cards-container'>
                 <div className='products-container'>
-                    {productsFromCategory.map(product => {
+                    {productsFromCategory && productsFromCategory.map(product => {
                         return(
-                            <CardProduct className='product-card' productName={product.name} productPrice={product.price} productId={product._id} productImg={product.images} productRoute={'products'}/>
+                            <CardProduct key={product._id} className='product-card' productName={product.name} productPrice={product.price} productId={product._id} productImg={product.images} productRoute={'products'}/>
                         )           
                     })}
                 </div>
