@@ -26,7 +26,7 @@ function NavBar() {
             <Nav.Link href="como-cuidar">Como cuidar</Nav.Link>
             <NavDropdown title="Nossos Produtos" id="navbarScrollingDropdown">
               <NavDropdown.Item href="aneis">Anéis</NavDropdown.Item>
-              <NavDropdown.Item href="brincos">
+              <NavDropdown.Item href={`/category/name/brincos`}>
                 Brincos
               </NavDropdown.Item>
               <NavDropdown.Item href="colares">
