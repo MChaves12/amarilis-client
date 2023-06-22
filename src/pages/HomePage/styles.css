@@ -1,0 +1,24 @@
+.products-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 1200px;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+}
+
+.title {
+    color: black;
+    margin-top: 20px;
+    margin-left: 160px;
+}
+
+.carousel-title {
+    background-color: black;
+    opacity: 50%;
+}
+
+h3 {
+    background-color: black;
+    color: white;
+}
