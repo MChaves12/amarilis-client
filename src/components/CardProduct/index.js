@@ -10,7 +10,7 @@ import {
 } from "mdb-react-ui-kit";
 import './styles.css';
 
-function CardProduct({productName, productPrice, productId }) {
+function CardProduct({productName, productPrice, productId, productImg }) {
 
   return (
     <MDBCard className="product-card">
@@ -20,7 +20,7 @@ function CardProduct({productName, productPrice, productId }) {
         className="bg-image hover-overlay"
       >
         <MDBCardImage className="cardImage"
-          src="https://mdbootstrap.com/img/new/standard/nature/111.webp"
+          src={productImg || "https://mdbootstrap.com/img/new/standard/nature/111.webp"}
           fluid
           alt="..."
         />
@@ -33,9 +33,9 @@ function CardProduct({productName, productPrice, productId }) {
       </MDBRipple>
       <MDBCardBody>
         <MDBCardTitle>{productName}</MDBCardTitle>
-        <MDBCardText className="cardText">{productPrice} </MDBCardText>
+        <MDBCardText className="cardText">{`R$${productPrice},00`} </MDBCardText>
         <div className="btns-container"> 
-          <MDBBtn className='card-btn' href={`/admin/products/${productId}`}>Detalhes</MDBBtn>
+          <MDBBtn className='card-btn' href={`action`}>Lista de desejos</MDBBtn>
         </div>
       </MDBCardBody>
     </MDBCard>

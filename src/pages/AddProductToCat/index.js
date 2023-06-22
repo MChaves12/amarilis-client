@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useNavigate } from "react-router-dom"
 import api from '../../api/amarilis.api';
+import AdminNavbar from '../../components/AdminNavbar/AdminNavbar';
 
 function AddProductToCategory () {
     const [categoryName, setCategoryName] = useState('')
@@ -25,11 +26,14 @@ function AddProductToCategory () {
 
     return(
         <div>
-            <form className='add-product-form-container' onSubmit={handleSubmit}>
-                <label htmlFor="name">Categoria:</label>
-                <input className='input' id="name" type="text" value={categoryName} onChange={handleCategory} />
-                <button className='submit-btn' type="submit">Adicionar produto</button>
-            </form>    
+            <AdminNavbar /> 
+            <div className='add-product-form-page'>
+                <form className='add-product-form-container' onSubmit={handleSubmit}>
+                    <label htmlFor="name">Categoria:</label>
+                    <input className='input' id="name" type="text" value={categoryName} onChange={handleCategory} />
+                    <button className='submit-btn' type="submit">Adicionar produto</button>
+                </form>    
+            </div>
         </div>
     );
 };

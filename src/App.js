@@ -13,12 +13,14 @@ import CategoryCrud from "./pages/CategoryCrud";
 import AddProductToCategory from "./pages/AddProductToCat";
 import CreateCategory from "./pages/CreateCategory";
 import HomePage from "./pages/HomePage";
+import ProductsForCategory from "./pages/ProductsForCategory";
 
 function App() {
   return (
     <div className="App">
       <Routes>
         <Route path='/' element={<HomePage />} />
+        <Route path='/category/name/:categoryName' element={<ProductsForCategory />} />
         <Route path='/admin/signup' element={<IsAnon> <SignupPage /> </IsAnon>} />
         <Route path='/admin/login' element={<IsAnon> <LoginPage /> </IsAnon>} />
         <Route path='/admin/products' element={ <IsPrivate> <AllProductsPage /> </IsPrivate>}  />

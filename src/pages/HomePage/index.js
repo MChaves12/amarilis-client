@@ -1,3 +1,4 @@
+import './styles.css';
 import Carousel from "react-bootstrap/Carousel";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
@@ -6,7 +7,21 @@ import Img1 from "../../assets/imgcarrossel1.jpg";
 import Img2 from "../../assets/imgcarrossel2.jpg";
 import Img3 from "../../assets/imgcarrossel3.jpg";
 
+
+import { useState, useEffect } from 'react';
+import api from '../../api/amarilis.api';
+
 function HomePage() {
+
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+      api.getAllProducts()
+      .then((res) => {
+          setProducts(res);
+      });
+  }, []);
+
   return (
     <div className="">
     <Navbar/>
@@ -18,7 +33,7 @@ function HomePage() {
               src={Img1}
               alt="First slide"
             />
-            <Carousel.Caption>
+            <Carousel.Caption className='carousel-title'>
               <h3>Conheça a Amarílis</h3>
             </Carousel.Caption>
           </Carousel.Item>
@@ -28,8 +43,7 @@ function HomePage() {
               src={Img2}
               alt="Second slide"
             />
-
-            <Carousel.Caption>
+            <Carousel.Caption className='carousel-title'>
               <h3>Trabalhamos com Jóias e Semi Jóias</h3>
             </Carousel.Caption>
           </Carousel.Item>
@@ -39,17 +53,24 @@ function HomePage() {
               src={Img3}
               alt="Third slide"
             />
-
-            <Carousel.Caption>
+            <Carousel.Caption className='carousel-title'>
               <h3>Conheça a Nossa Coleçao</h3>
             </Carousel.Caption>
           </Carousel.Item>
         </Carousel>
       </div>
-      <div className="h1">
+      <div className="title">
         <h1>Nossos Produtos</h1>
       </div>
-      <CardProduct/>
+      <div className='cards-container'>
+        <div className='products-container'>
+          {products.map(product => {
+            return(
+              <CardProduct className='product-card' productName={product.name} productPrice={product.price} productId={product._id} productImg={product.images} productRoute={'products'}/>
+              )           
+          })}
+        </div>
+      </div>
     
 <Footer/>
 
