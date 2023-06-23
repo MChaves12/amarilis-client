@@ -6,9 +6,13 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import { AuthContext } from '../../context/auth.context'; 
+import { useContext } from 'react';
 
 
-function adminNavbar() {
+function AdminNavbar() {
+  const { user, logOutUser} = useContext(AuthContext)
+
   return (
     <Navbar bg="light" expand="lg" className="navbar">
       <Container fluid>
@@ -30,6 +34,9 @@ function adminNavbar() {
               <NavDropdown.Item href="/admin/category">Todos as categorias</NavDropdown.Item>
               <NavDropdown.Item href="/admin/category/create">Criar categoria</NavDropdown.Item>
             </NavDropdown>
+            <NavDropdown title={user && user.username} id="navbarScrollingDropdown">
+              <NavDropdown.Item onClick={logOutUser}>Logout</NavDropdown.Item>
+            </NavDropdown>
           </Nav>
           <Form className="d-flex">
             <Form.Control
@@ -46,4 +53,4 @@ function adminNavbar() {
   );
 }
 
-export default adminNavbar;
+export default AdminNavbar;
