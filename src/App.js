@@ -13,6 +13,11 @@ import CategoryCrud from "./pages/CategoryCrud";
 import AddProductToCategory from "./pages/AddProductToCat";
 import CreateCategory from "./pages/CreateCategory";
 import HomePage from "./pages/HomePage";
+import ComoCuidar from "./pages/ComoCuidar";
+import GuiaDeTamanhos from "./pages/GuiaDeTamanhos";
+import InformacoesSobreEnvios from "./pages/InformacoesSobreEnvios";
+import PerguntasFrequentes from "./pages/PerguntasFrequentes";
+import PoliticasDeTrocas from "./pages/PerguntasFrequentes"
 import ProductsForCategory from "./pages/ProductsForCategory";
 
 function App() {
@@ -20,6 +25,11 @@ function App() {
     <div className="App">
       <Routes>
         <Route path='/' element={<HomePage />} />
+        <Route path='/como-cuidar' element={<ComoCuidar />} />
+        <Route path='/guia-de-tamanhos' element={<GuiaDeTamanhos />} />
+        <Route path='/informacoes-de-envio' element={<InformacoesSobreEnvios />} />
+        <Route path='/perguntas-frequentes' element={<PerguntasFrequentes />} />
+        <Route path='/politicas-de-trocas' element={<PoliticasDeTrocas />} />
         <Route path='/category/name/:categoryName' element={<ProductsForCategory />} />
         <Route path='/admin/signup' element={<IsAnon> <SignupPage /> </IsAnon>} />
         <Route path='/admin/login' element={<IsAnon> <LoginPage /> </IsAnon>} />

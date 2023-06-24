@@ -1,0 +1,16 @@
+.pag-construcao{
+  display: flex;
+	flex-direction: column;
+	flex-wrap: wrap-reverse;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+ 
+}
+
+.construction-page-container{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-left: 80px;
+}

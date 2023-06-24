@@ -126,7 +126,6 @@ class AmarilisApi {
       throw error;
     }
   };
-
   
   getAllCategories = async () => {
     try {
