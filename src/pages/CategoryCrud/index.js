@@ -25,7 +25,7 @@ function CategoryCrud() {
 
     const deleteCategory = async () => {
         await api.removeCategory(categoryId);
-        navigate('/admin/categories');
+        navigate('/admin/category');
     };
 
     const handleSubmit = async (e) => {
