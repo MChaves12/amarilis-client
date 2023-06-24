@@ -18,6 +18,7 @@ import GuiaDeTamanhos from "./pages/GuiaDeTamanhos";
 import InformacoesSobreEnvios from "./pages/InformacoesSobreEnvios";
 import PerguntasFrequentes from "./pages/PerguntasFrequentes";
 import PoliticasDeTrocas from "./pages/PerguntasFrequentes"
+import ProductsForCategory from "./pages/ProductsForCategory";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
         <Route path='/informacoes-de-envio' element={<InformacoesSobreEnvios />} />
         <Route path='/perguntas-frequentes' element={<PerguntasFrequentes />} />
         <Route path='/politicas-de-trocas' element={<PoliticasDeTrocas />} />
+        <Route path='/category/name/:categoryName' element={<ProductsForCategory />} />
         <Route path='/admin/signup' element={<IsAnon> <SignupPage /> </IsAnon>} />
         <Route path='/admin/login' element={<IsAnon> <LoginPage /> </IsAnon>} />
         <Route path='/admin/products' element={ <IsPrivate> <AllProductsPage /> </IsPrivate>}  />

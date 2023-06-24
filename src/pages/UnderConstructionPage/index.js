@@ -1,4 +1,4 @@
-import errorImg from '../../assets/pageunderconstruction.jpg'
+import errorImg from '../../assets/teste.jpg'
 function UnderConstructionPage(){
     return(
 <div>

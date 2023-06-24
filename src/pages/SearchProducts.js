@@ -1,4 +1,4 @@
-import RecipeLink from "../components/RecipeLink";
+import CardProduct from "../components/CardProduct";
 import ErrorPage from "./ErrorPage";
 import { useEffect, useState } from "react";
 import { useParams } from 'react-router-dom';
@@ -24,7 +24,7 @@ function SearchResults() {
             <div className="search-products-page">  
                 {searchProducts.map(product => {
                     return (
-                        <RecipeLink key={product.idProduct} productIMG={product.strProductThumb} productName={product.strProduct} idProduct={product.idProduct} />
+                        <CardProduct key={product.idProduct} productIMG={product.strProductThumb} productName={product.strProduct} idProduct={product.idProduct} />
                     )
                 })}
             </div>
