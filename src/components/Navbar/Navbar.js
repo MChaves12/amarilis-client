@@ -25,17 +25,18 @@ function NavBar() {
             <Nav.Link href="guia-de-tamanhos">Guia de tamanhos</Nav.Link>
             <Nav.Link href="como-cuidar">Como cuidar</Nav.Link>
             <NavDropdown title="Nossos Produtos" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="aneis">Anéis</NavDropdown.Item>
+              <NavDropdown.Item href={`/category/name/anéis`}>
+                Anéis</NavDropdown.Item>
               <NavDropdown.Item href={`/category/name/brincos`}>
                 Brincos
               </NavDropdown.Item>
-              <NavDropdown.Item href="colares">
+              <NavDropdown.Item href={`/category/name/colares`}>
                 Colares
               </NavDropdown.Item>
-              <NavDropdown.Item href="piercings">
+              <NavDropdown.Item href={`/category/name/piercings`}>
                 Piercings
               </NavDropdown.Item>
-              <NavDropdown.Item href="pulseiras">
+              <NavDropdown.Item href={`/category/name/pulseiras`}>
                 Pulseiras
               </NavDropdown.Item>
             </NavDropdown>
